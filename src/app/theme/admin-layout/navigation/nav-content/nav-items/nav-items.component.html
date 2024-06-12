@@ -2,7 +2,9 @@
   <a [target]="item.target ? '_blank' : '_self'" [routerLink]="[item.url]" (click)="closeOtherMenu($event)">
     <ng-container *ngIf="item.icon">
       <span class="coded-micon">
-        <!-- <i antIcon type="{{ item.icon }}" theme="outline"></i> -->
+        <i antIcon [type]="item.icon" theme="outline"></i>
+        <!-- <i-feather [name]="item.icon" class="someclass"></i-feather> -->
+
       </span>
     </ng-container>
     <ng-container *ngIf="item.icon; else noIcon">
@@ -17,7 +19,7 @@
   <a [target]="item.target ? '_blank' : '_self'" [href]="item.url">
     <ng-container *ngIf="item.icon">
       <span class="coded-micon">
-        <!-- <i antIcon type="{{ item.icon }}" theme="outline"></i> -->
+        <i antIcon [type]="item.icon" theme="outline"></i>
       </span>
     </ng-container>
     <ng-container *ngIf="item.icon; else noIconExternal">

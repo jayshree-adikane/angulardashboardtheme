@@ -1,21 +1,16 @@
-<li data-username="mantis dashboard" class="nav-item coded-hasmenu" [routerLinkActive]="['active']">
-  <a [routerLinkActive]="['active']" (click)="navCollapse($event)">
-    @if (item.icon) {
-      <span class="coded-micon">
-        <!-- <i antIcon type="{{ item.icon }}" theme="outline"></i> -->
-      </span>
-    }
+<li data-username="mantis dashboard" class="nav-item coded-hasmenu" routerLinkActive="active">
+  <a routerLinkActive="active" (click)="navCollapse($event)">
+    <span *ngIf="item.icon" class="coded-micon">
+      <i antIcon [type]="item.icon" theme="outline"></i>
+    </span>
     <span class="coded-mtext">
       {{ item.title }}
     </span>
   </a>
-  <ul class="coded-submenu" [routerLinkActive]="['active']" [ngClass]="item.classes!">
-    @for (item of item.children; track item) {
-      @if (item.type === 'item') {
-        <app-nav-items [item]="item"></app-nav-items>
-      } @else if (item.type === 'collapse') {
-        <app-nav-collapse [item]="item"></app-nav-collapse>
-      }
-    }
+  <ul class="coded-submenu" routerLinkActive="active" [ngClass]="item.classes">
+    <ng-container *ngFor="let child of item.children">
+      <app-nav-items *ngIf="child.type === 'item'" [item]="child"></app-nav-items>
+      <app-nav-collapse *ngIf="child.type === 'collapse'" [item]="child"></app-nav-collapse>
+    </ng-container>
   </ul>
 </li>

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgbDropdownModule, NgbNavModule, NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { IconModule } from '@ant-design/icons-angular';
 import { AdminLayoutRoutingModule } from './admin-layout-routing.module';
 import { NavLeftComponent } from './nav-bar/nav-left/nav-left.component'; 
 import { NavRightComponent } from './nav-bar/nav-right/nav-right.component';
@@ -16,6 +16,8 @@ import { NavContentComponent } from './navigation/nav-content/nav-content.compon
 import { NavGroupComponent } from './navigation/nav-content/nav-group/nav-group.component';
 import { NavItemsComponent } from './navigation/nav-content/nav-items/nav-items.component';
 import { NavCollapseComponent } from './navigation/nav-content/nav-collapse/nav-collapse.component';
+import { HttpClientModule } from '@angular/common/http'; 
+
 @NgModule({
   declarations: [
     NavLeftComponent, 
@@ -39,8 +41,11 @@ import { NavCollapseComponent } from './navigation/nav-content/nav-collapse/nav-
     NgbDropdownModule,
     NgbNavModule,
     NgbModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    IconModule,
+    HttpClientModule
   ],
+ 
   exports: [
     NavLeftComponent, 
     NavRightComponent, 
@@ -52,7 +57,7 @@ import { NavCollapseComponent } from './navigation/nav-content/nav-collapse/nav-
     NavContentComponent,
     NavGroupComponent,
     NavItemsComponent,
-    NavCollapseComponent
+    NavCollapseComponent,
   ]
 })
 export class AdminLayoutModule { }

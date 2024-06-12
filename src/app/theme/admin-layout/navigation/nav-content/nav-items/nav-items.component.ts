@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavigationItem } from '../../navigation';
+import { IconService } from '@ant-design/icons-angular';
 
 @Component({
   selector: 'app-nav-items',
@@ -10,7 +11,8 @@ import { NavigationItem } from '../../navigation';
 })
 export class NavItemsComponent {
   @Input() item!: NavigationItem;
-
+  
+  
   closeOtherMenu(event: MouseEvent) {
     const ele = event.target as HTMLElement;
     if (ele !== null && ele !== undefined) {

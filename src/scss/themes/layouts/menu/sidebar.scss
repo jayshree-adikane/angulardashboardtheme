@@ -104,7 +104,7 @@
     .coded-inner-navbar {
       flex-direction: column;
 
-      app-nav-item > li.active:after {
+      app-nav-items > li.active:after {
         top: 0 !important;
         height: 100% !important;
       }
@@ -139,7 +139,7 @@
             position: absolute;
             display: block;
 
-            > app-nav-item li {
+            > app-nav-items li {
               > a {
                 text-align: left;
                 padding: 12px 30px 12px 55px;
@@ -165,7 +165,7 @@
                 display: block;
               }
               .coded-submenu > {
-                app-nav-item li {
+                app-nav-items li {
                   > a {
                     padding: 12px 30px 12px 75px;
                   }
@@ -234,7 +234,7 @@
         }
       }
 
-      app-nav-item {
+      app-nav-items {
         li {
           > a {
             > .coded-micon {
@@ -244,7 +244,7 @@
         }
       }
 
-      > app-nav-group > app-nav-item {
+      > app-nav-group > app-nav-items {
         li {
           position: relative;
           &:before {

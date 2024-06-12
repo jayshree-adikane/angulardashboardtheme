@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import { GuestComponent } from './theme/layout/guest/guest/guest.component';
 import { AdminLayoutComponent } from './theme/admin-layout/admin-layout.component';
 import { AdminLayoutModule } from './theme/admin-layout/admin-layout.module';
-
+import { NgScrollbarModule } from 'ngx-scrollbar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +21,8 @@ import { AdminLayoutModule } from './theme/admin-layout/admin-layout.module';
     BrowserAnimationsModule,
     FormsModule,
     CommonModule,
-    AdminLayoutModule
+    AdminLayoutModule,
+    NgScrollbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

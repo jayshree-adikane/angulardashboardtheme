@@ -1,11 +1,12 @@
-@if (isSpinnerVisible) {
-  <div id="http-loader">
-    <div class="loader-bg">
-      @if (spinner === Spinkit.skLine) {
-        <div class="sk-line-material" [class.colored]="!backgroundColor">
-          <div class="sk-child sk-bounce1" [style.background-color]="backgroundColor"></div>
-        </div>
-      }
-    </div>
+<div *ngIf="isSpinnerVisible" id="http-loader">
+  <div class="loader-bg">
+    <ng-container *ngIf="spinner === Spinkit.skLine; else otherSpinner">
+      <div class="sk-line-material" [ngClass]="{ 'colored': !backgroundColor }">
+        <div class="sk-child sk-bounce1" [ngStyle]="{ 'background-color': backgroundColor }"></div>
+      </div>
+    </ng-container>
+    <ng-template #otherSpinner>
+      <!-- Handle other types of spinners here if needed -->
+    </ng-template>
   </div>
-}
+</div>

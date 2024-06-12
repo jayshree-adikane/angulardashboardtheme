@@ -28,7 +28,7 @@
               }
 
               .coded-submenu {
-                > app-nav-item {
+                > app-nav-items {
                   li {
                     &.active,
                     &:focus,
@@ -44,7 +44,7 @@
           }
         }
 
-        .coded-submenu > app-nav-item li {
+        .coded-submenu > app-nav-items li {
           &.active {
             > a {
               background: rgba(var(--bs-primary-rgb), 0.1);
@@ -57,7 +57,7 @@
           }
         }
       }
-      > app-nav-item {
+      > app-nav-items {
         li {
           &.nav-item {
             &.active,
