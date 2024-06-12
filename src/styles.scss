@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+// Import Bootstrap's functions first
+@import '../node_modules/bootstrap/scss/functions';
+
+// Import Bootstrap's variables
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/variables-dark';
+
+// Import Bootstrap's mixins
+@import '../node_modules/bootstrap/scss/mixins';
+
+// Import Bootstrap's main SCSS file
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// Import Bootstrap's utilities
+@import '../node_modules/bootstrap/scss/utilities';
+@import '../node_modules/bootstrap/scss/utilities/api';
+
+// Import custom SCSS variables (make sure these paths are correct)
+@import 'scss/settings/color-variables';
+@import 'scss/settings/theme-variables';
+@import 'scss/settings/bootstrap-variables';
+
+// Import custom Bootstrap overrides (ensure these are defined correctly)
+@import 'scss/bootstrap/bootstrap.scss';
+
+// Import main framework SCSS
+@import 'scss/themes/generic.scss';
+@import 'scss/themes/general.scss';
+
+// Import components SCSS
+@import 'scss/themes/components/components.scss';
+
+// Import layout SCSS files (Sidebar, Navbar, Breadcrumb, Footer)
+@import 'scss/themes/layouts/menu/sidebar.scss';
+@import 'scss/themes/layouts/navbar/navbar.scss';
+@import 'scss/themes/layouts/pc-common.scss';
+@import 'scss/themes/layouts/breadcrumb/breadcrumb.scss';
+@import 'scss/themes/layouts/footer/footer.scss';
+
+// Import preset styles
+@import 'scss/themes/preset-style.scss';

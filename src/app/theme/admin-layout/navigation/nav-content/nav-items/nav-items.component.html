@@ -1,0 +1,30 @@
+<li *ngIf="item.url && !item.external" [ngClass]="item.classes" [routerLinkActive]="['active']">
+  <a [target]="item.target ? '_blank' : '_self'" [routerLink]="[item.url]" (click)="closeOtherMenu($event)">
+    <ng-container *ngIf="item.icon">
+      <span class="coded-micon">
+        <!-- <i antIcon type="{{ item.icon }}" theme="outline"></i> -->
+      </span>
+    </ng-container>
+    <ng-container *ngIf="item.icon; else noIcon">
+      <span class="coded-mtext">{{ item.title }}</span>
+    </ng-container>
+    <ng-template #noIcon>
+      {{ item.title }}
+    </ng-template>
+  </a>
+</li>
+<li *ngIf="item.url && item.external" [ngClass]="item.classes">
+  <a [target]="item.target ? '_blank' : '_self'" [href]="item.url">
+    <ng-container *ngIf="item.icon">
+      <span class="coded-micon">
+        <!-- <i antIcon type="{{ item.icon }}" theme="outline"></i> -->
+      </span>
+    </ng-container>
+    <ng-container *ngIf="item.icon; else noIconExternal">
+      <span class="coded-mtext">{{ item.title }}</span>
+    </ng-container>
+    <ng-template #noIconExternal>
+      {{ item.title }}
+    </ng-template>
+  </a>
+</li>

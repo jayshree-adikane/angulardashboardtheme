@@ -1,0 +1,39 @@
+<ng-container *ngFor="let breadcrumb of navigationList; let last = last">
+  <ng-container *ngIf="last && breadcrumb.breadcrumbs !== false">
+    <div class="page-header">
+      <div class="page-block">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a [routerLink]="['/dashboard/analytics/']" title="Home" class="home" *ngIf="type === 'theme2'">
+                  <i class="feather icon-home"></i>
+                </a>
+                <a [routerLink]="['/dashboard/analytics/']" class="home" *ngIf="type === 'theme1'">
+                  Home
+                </a>
+              </li>
+              <ng-container *ngFor="let breadcrumbItem of navigationList">
+                <ng-container *ngIf="breadcrumbItem.url !== false">
+                  <li class="breadcrumb-item">
+                    <a [routerLink]="breadcrumbItem.url" class="f-14 f-w-600">{{ breadcrumbItem.title }}</a>
+                  </li>
+                </ng-container>
+                <ng-container *ngIf="breadcrumbItem.url === false && breadcrumbItem.type !== 'group'">
+                  <li class="breadcrumb-item">
+                    <a href="javascript:">{{ breadcrumbItem.title }}</a>
+                  </li>
+                </ng-container>
+              </ng-container>
+            </ul>
+          </div>
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h2 class="mb-0 f-w-600 mt-2">{{ breadcrumb.title }}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
